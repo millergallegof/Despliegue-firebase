@@ -1,0 +1,21 @@
+<div class="contenedor_detalle">
+  <h6>Pregunta:</h6>
+  <p>{{pregunta?.pregunta}}</p>
+  <h6>Area del conocimiento: </h6>
+  <p>{{pregunta?.areaConocimiento}}</p>
+  <h6>Descriptor:</h6>
+  <p>{{pregunta?.descriptor}}</p>
+  <h6>Tipo de pregunta:</h6>
+  <p>{{pregunta?.tipoPregunta}}</p>
+  <h6>Fecha:</h6>
+  <p>{{pregunta?.fechaActualizacion |  date:'yyy-MM-dd'}}</p>
+  <h6>Opciones de respuesta</h6>
+  <ul>
+    <li *ngFor="let opcion of pregunta?.opciones">
+      {{opcion.nombre}}
+      <label class="label_correcta" *ngIf="opcion.esCorrecto">/ correcta</label>
+    </li>
+  </ul>
+</div>
+
+

@@ -1,0 +1,40 @@
+<body>
+  <div class="container">
+    <div class="login">
+      <img src="../../../assets/sofka.png" width="500" height="200">
+      <p></p>
+      <form class="signin-form">
+        <div class="form-group">
+          <input type="text" formControlName="usuario" class="form-control" placeholder="Usuario" id="nombreUsuario"
+            #userName required>
+        </div>
+        <p></p>
+        <div class="form-group">
+          <input id="password-field" formControlName="contrasena" type="password" class="form-control"
+            placeholder="Contraseña" #userPassword required>
+          <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
+        </div>
+        <p></p>
+        <div class="form-group ">
+          <button type="button" class="btn btn-primary"
+            (click)="verificarCredenciales(userName.value, userPassword.value)">Iniciar
+            sesión</button>
+        </div>
+        <div class="text-center">
+          <a class="olvide_contrasena" (click)="recuperarContrasena(userName.value)">
+            Olvidé mi contraseña
+          </a>
+        </div>
+        <div class="text-center">
+          <a routerLink="/aspirante" class="soy_aspirante">
+            Soy un aspirante
+          </a>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="imagen">
+    <img src="../../../assets/1.jpg" width="500" height="400">
+  </div>
+
+</body>

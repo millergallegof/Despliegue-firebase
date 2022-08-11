@@ -1,0 +1,77 @@
+<nav class="navbar navbar-light" style="background-color: #9dc3e6">
+    <div class="container-fluid">
+      <span class="navbar-brand encabezado" href="#">Agregar pregunta</span>
+    </div>
+</nav>
+
+<div class="container">
+
+    <form [formGroup]="forma" (ngSubmit)="enviarPregunta()">
+
+        <br>
+        <div class="">
+
+            <div class="row mb-3">
+                <label for="tipo" class="col-sm-3 col-form-label">Tipo de pregutna</label>
+                <div class="col-sm-5">
+                <select class="form-select" aria-label="select" formControlName="tipo" id="tipo">
+                    <option selected>Seleccione una opción</option>
+                    <option *ngFor="let opcion of tipoPregunta, let i = index" value="{{i}}">{{opcion}}</option>
+                </select>
+                </div>
+            </div>
+    
+            <div class="row mb-3">
+                <label for="area" class="col-sm-3 col-form-label">Área de conocimiento</label>
+                <div class="col-sm-5">
+                <select class="form-select" aria-label="select" formControlName="area" id="area" >
+                    <option selected>Seleccione una opción</option>
+                    <option *ngFor="let opcion of areas" value="{{opcion.id}}" >
+                        {{opcion.nombreAreaConocimiento}}
+                    </option>
+                </select>
+                </div>
+            </div>
+    
+            <div class="row mb-3">
+                <label for="descriptor" class="col-sm-3 col-form-label">Desriptor</label>
+                <div class="col-sm-5">
+                <select class="form-select" aria-label="select" formControlName="descriptor" id="descriptor">
+                    <option selected>Seleccione una opción</option>
+                    <option *ngFor="let opcion of descriptores" value="{{opcion.idDescriptor}}" >
+                        {{opcion.nombre}}
+                    </option>
+                </select>
+                </div>
+            </div>
+    
+            <div class="row mb-3">
+                <label for="pregunta" class="col-sm-3 col-form-label texto-simple">Pregunta</label>
+                <div class="col-sm-5">
+                  <input type="text" formControlName ="pregunta" class="form-control" id="pregunta">
+                </div>
+            </div>
+    
+            <div class="row mb-3">
+                <label for="opcion" class="col-sm-3 col-form-label texto-simple">Opción</label>
+                <div class="col-sm-4">
+                  <input type="text" formControlName ="opcion" class="form-control" id="opcion">
+                </div>
+                <a class="btn col-sm-1" href=""><p> &#10133;</p></a>
+            </div>
+    
+            <div class="form-group">
+                <label class="col-2 col-form-label">&nbsp;</label>
+                <div class="input-group col-md-8">
+                  <button type="submit" 
+                  class="btn btn-primary btn-block">
+                    submit
+                  </button>
+                </div>
+              </div>
+
+        </div>
+
+    </form>
+
+</div>

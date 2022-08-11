@@ -1,0 +1,98 @@
+ h1{
+  font-family: 'Roboto', sans-serif;
+  color: #4472C4;
+}
+
+.navbar {
+  background-color: #9DC3E6;
+  font-family: 'Roboto', sans-serif;
+  height: 10vh;
+}
+
+#title {
+  color: #4472C4;
+  font-size: 30px;
+  padding-left: 20px;
+}
+
+.logout_container{
+  padding-right: 8px;
+  cursor: pointer;
+}
+
+.tablero{
+  background-color: #5B9BD5;
+  display: flex;
+  flex-direction: row;
+  max-width: 100vw;
+  min-height:calc(90vh - 58px);
+  height: fit-content;
+  flex-wrap: wrap;
+}
+
+.table_container{
+  width: 45%;
+  min-width: 350px;
+  padding-left: 14px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.ngx-pagination{
+width: auto !important;
+}
+
+.form_container{
+  width: 45%;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:center;
+}
+.form_container img{
+  margin-top: 60px;
+  width: 300px;
+  height: auto;
+}
+
+.form_container button{
+  margin-top: 20px;
+
+}
+
+.tablero-coach-btn{
+  background-color:transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.tablero-coach-btn img{
+  width: auto;
+  height: 26px;
+}
+
+.celda_opciones{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.modal{
+  position: absolute;
+  top: 25%;
+  left: calc(50% - 150px);
+  background-color: white;
+  width: 350px;
+  max-height: 400px;
+  justify-self: center;
+  border: 2px solid black;
+  border-radius: 6px;
+}
+
+.close_modal_container{
+  background-color: #9DC3E6;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}

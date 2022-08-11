@@ -1,0 +1,15 @@
+.contenedor_detalle{
+  font-family: 'Roboto', sans-serif;
+  padding: 8px;
+  overflow: scroll;
+  height: 90%;
+}
+
+.label_correcta{
+  color: green;
+  font-weight: bold;
+}
+
+h6{
+  color: #4472C4;;
+}

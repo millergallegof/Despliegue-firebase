@@ -1,0 +1,29 @@
+<body>
+  <app-header-component [title]="title"></app-header-component>
+
+  <div *ngIf="aprobado === 'evaluacion 1 completada'" class="center">
+    <p>{{aspirante?.nombre}}, tu valoración fue de: {{valoracion}}%</p>
+    <p>Buen trabajo, has pasado a la siguiente fase</p>
+    <button (click)="continuar()" type="button" class="btn btn-primary"> {{valorBoton}} </button>
+  </div>
+  <div *ngIf="aprobado === 'evaluacion 1 perdida'" class="center">
+    <p>{{aspirante?.nombre}}, tu valoración fue de: {{valoracion}}%</p>
+    <p>Buen trabajo, eres un candidato para:</p>
+    <p>{{fase}}</p>
+    <button (click)="finalizarPrueba()" type="button" class="btn btn-primary">{{valorBoton}}</button>
+  </div>
+  <div *ngIf="aprobado === 'evaluacion 2 aprobada'" class="center">
+    <p>{{aspirante?.nombre}}, tu valoración fue de: {{valoracion}}%</p>
+    <p>Buen trabajo, has pasado a la siguiente fase:</p>
+    <p>{{fase}}</p>
+    <button (click)="finalizarPrueba()" type="button" class="btn btn-primary">{{valorBoton}}</button>
+  </div>
+  <div *ngIf="aprobado === 'evaluacion 2 perdida'" class="center">
+    <p>{{aspirante?.nombre}}, tu valoración fue de: {{valoracion}}%</p>
+    <p>Buen trabajo, eres un candidato para:</p>
+    <p>{{fase}}</p>
+    <button (click)="finalizarPrueba()" type="button" class="btn btn-primary">{{valorBoton}}</button>
+  </div>
+
+  <app-footer-component></app-footer-component>
+</body>

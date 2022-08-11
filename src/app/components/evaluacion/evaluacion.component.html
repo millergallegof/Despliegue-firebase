@@ -1,0 +1,84 @@
+<nav class="navbar navbar-light" style="background-color: #9dc3e6">
+  <div class="container-fluid">
+    <span class="navbar-brand" href="#">Pregunta {{ indexPregunta + 1 }}</span>
+    <span class="navbar-text" style="font-weight: bold; font-size: 20px;"> 00:{{minutesToDday}}:{{secondsToDday}} </span>
+  </div>
+</nav>
+
+<button (click)="imprimir()">imprimir</button>
+
+<div class="container mt-3">
+
+  <form [formGroup]="forma" (ngSubmit)="enviarEvaluacion()">
+
+    <div [ngSwitch]="preguntaMostrada.tipoPregunta">
+
+      <div *ngSwitchCase="'Verdadero o falso'" class="form-group row">
+        <h2 class="mb-3">
+          {{ preguntaMostrada.pregunta }}
+        </h2>
+        <div class="form-check form-check-inline" *ngFor="let opcion of preguntaMostrada.opciones, let i= index">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="pregunta"
+            value={{opcion.esCorrecto}}
+            id=""
+          />
+          <label>{{ opcion.nombre }}</label>
+        </div>
+      </div>
+
+
+      <div *ngSwitchCase="'Única opción'" class="form-group row">
+        <h2 class="mb-3">{{ preguntaMostrada.pregunta }}</h2>
+
+        <div class="form-check form-check-inline" *ngFor="let opcion of preguntaMostrada.opciones, let i= index">
+          <input
+            class="form-check-input"
+            type="radio"
+            formControlName="pregunta"
+            value={{i}}
+            id=""
+          />
+          <label>{{ opcion.nombre }}</label>
+        </div>
+      </div>
+
+
+      <div *ngSwitchCase="'Opción múltiple'" class="form-group row" formGroupName	= "multiple">
+        <h2 class="mb-3">{{ preguntaMostrada.pregunta }}</h2>
+
+        <div class="form-check" *ngFor="let opcion of preguntaMostrada.opciones, let i= index">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            formControlName= "op{{i}}"
+            id="flexCheckDefault1"
+          />
+          <label class="form-check-label" for="flexCheckDefault1">
+            {{ opcion.nombre }}
+          </label>
+        </div>
+      </div>
+
+      <div *ngSwitchDefault class="form-group row">
+        <h2>Fin del examen</h2>
+      </div>
+
+  </div>
+
+    <div class="form-group">
+      <label class="col-2 col-form-label">&nbsp;</label>
+      <div class="input-group col-md-8">
+        <button type="submit"
+        class="btn btn-primary btn-block"
+        [disabled]="preguntaNoValida">
+          <span *ngIf="preguntaNoValida && indexPregunta != 9"> Seleccione una opción</span>
+          <span *ngIf="!preguntaNoValida && indexPregunta != 9"> Continuar</span>
+          <span *ngIf="indexPregunta == 9"> Finalizar</span>
+        </button>
+      </div>
+    </div>
+  </form>
+</div>

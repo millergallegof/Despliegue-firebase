@@ -1,0 +1,76 @@
+<nav class="navbar navbar-light" style="background-color: #9dc3e6">
+    <div class="container-fluid">
+      <span class="navbar-brand encabezado texto-simple" href="#">¡Hola futuro sofkiano!</span>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <div class="row">
+      <p class="completa-campos texto-simple">Completa los siguientes campos para comenzar</p>
+
+
+      <div class="container col-6 m-6">
+
+      <img src="../../assets/darlamano.PNG" style="margin-left: 240px; margin-bottom: 30px;" alt="imagen dar la mano">
+
+        <form [formGroup]="formaDatos" (ngSubmit)="solicitarCodigo()">
+          <div class="row mb-3">
+            <label for="nombre" class="col-sm-2 col-form-label texto-simple">Nombre y apellido</label>
+            <div class="col-sm-10">
+              <input [class.is-invalid]="nombreNoValido" type="text" formControlName ="nombre" class="form-control" id="nombre">
+              <span class="text-danger texto-simple" *ngIf="nombreNoValido"> Debes ingresar nombre espacio apellido</span>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <label for="email" class="col-sm-2 col-form-label texto-simple">Email</label>
+            <div class="col-sm-10">
+              <input [class.is-invalid]="emailNoValido" type="text" formControlName ="email" class="form-control" id="email">
+              <span class="text-danger texto-simple" *ngIf="emailNoValido"> Debe ingresar un correo valido</span>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-2 col-form-label">&nbsp;</label>
+            <div class="input-group col-md-8">
+              <button type="submit"
+              class="btn btn-primary btn-block">
+                Solicitar código
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+      </div>
+
+      <div class="container col-6">
+        <img src="../../assets/meta.PNG" alt="imagen meta" style="margin-bottom: 30px; margin-left: 100px;">
+
+        <form [formGroup]="formaCodigo" (ngSubmit)="comenzar()">
+          <div class="row mb-3">
+            <label for="codigo" class="col-sm-2 col-form-label texto-simple">Codigo de Verificación</label>
+            <div class="col-sm-10">
+              <input [class.is-invalid]="codigoNoValido" type="text" formControlName ="codigo" class="form-control" id="codigo">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="col-2 col-form-label">&nbsp;</label>
+            <div class="input-group col-md-8">
+              <button type="submit"
+              class="btn btn-success btn-block">
+                Comenzar
+              </button>
+            </div>
+          </div>
+
+        </form>
+
+    </div>
+
+    </div>
+    <div class="contenedor">
+        <img src="../../assets/QSofkaU.PNG" style="float: right;" alt="imagen Q Sofka">
+    </div>
